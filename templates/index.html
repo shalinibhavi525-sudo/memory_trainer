@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Memory Trainer</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🧠 Memory Trainer Game</h1>
+        <p><strong>Level:</strong> {{ level }} | <strong>Score:</strong> {{ score }}</p>
+
+        <h2>Memorize this sequence:</h2>
+        <p class="sequence">{{ sequence }}</p>
+
+        <form method="POST">
+            <input type="text" name="answer" placeholder="Type the sequence..." required>
+            <button type="submit">Submit</button>
+        </form>
+
+        {% if result %}
+        <div class="result">
+            <p>{{ result }}</p>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
